@@ -8,3 +8,9 @@ script:
   - cd build
   - cmake ..
   - cmake .. --build .
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - curl -T helloworld-0.0.0-Linux.deb -uevgeny9042:$BINTRAY_API_KEY "https://api.bintray.com/content/rti/homework/homework01/0/helloworld-0.0.0-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
