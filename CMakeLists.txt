@@ -4,6 +4,8 @@ project(helloworld VERSION 0.0.0)
 
 add_executable(helloworld main.cpp)
 
+install(TARGETS helloworld RUNTIME DESTINATION bin)
+
 set(CPACK_GENERATOR DEB)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
