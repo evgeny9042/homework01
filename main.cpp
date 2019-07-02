@@ -1,4 +1,6 @@
+
+
 int main() {
-  cout << "HELLO WORLD" << endl;
+  cout << "HELLO OTUS" << endl;
   return 0;
 }
