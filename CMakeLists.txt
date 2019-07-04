@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.2)
 project(helloworld VERSION 0.0.0)
 
 add_executable(helloworld main.cpp)
-add_library(mylibrary lib.cpp)
+add_library(mylibrary SHARED lib.cpp)
 
 target_link_libraries(helloworld PRIVATE
     mylibrary
