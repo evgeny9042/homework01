@@ -4,6 +4,11 @@ project(helloworld VERSION 0.0.0)
 
 add_executable(helloworld main.cpp lib.cpp)
 
+set_target_properties(helloworld PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+)
+
 install(TARGETS helloworld RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
