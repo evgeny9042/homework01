@@ -2,7 +2,12 @@ cmake_minimum_required(VERSION 3.2)
 
 project(helloworld VERSION 0.0.0)
 
-add_executable(helloworld main.cpp lib.cpp)
+add_executable(helloworld main.cpp)
+add_library(mylibrary lib.cpp)
+
+target_link_libraries(helloworld PRIVATE
+    mylibrary
+)
 
 set_target_properties(helloworld PROPERTIES
     CXX_STANDARD 14
