@@ -1,9 +1,15 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(helloworld VERSION 0.0.0)
+project(helloworld VERSION 0.0.2)
+
+configure_file(version.h.in ${CMAKE_CURRENT_BINARY_DIR}/my_version.h)
 
 add_executable(helloworld main.cpp)
-add_library(mylibrary SHARED lib.cpp)
+add_library(mylibrary lib.cpp)
+
+target_include_directories(mylibrary PRIVATE 
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
 
 target_link_libraries(helloworld PRIVATE
     mylibrary

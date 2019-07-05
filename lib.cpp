@@ -1,10 +1,11 @@
 #include "lib.h"
+#include "my_version.h"
 
 namespace my_library {
 
 int version()
 {
-    return 1;
+    return PROJECT_VERSION_PATCH;
 }
 
 }
